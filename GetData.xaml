@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>776,557.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>827.2,610.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
@@ -99,7 +99,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="データを取得する" DisplayName="Get Data" sap:VirtualizedContainerService.HintSize="400,492.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="データを取得する" DisplayName="Get Data" sap:VirtualizedContainerService.HintSize="400,389.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="MailMessage" />
     </Sequence.Variables>
@@ -109,23 +109,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetOutlookMailMessages Account="{x:Null}" sap2010:Annotation.AnnotationText="メールの内容を取得する" DisplayName="Outlook メール メッセージを取得" Filter="[Subject]='UiPathテスト用'" FilterByMessageIds="{x:Null}" GetAttachements="False" sap:VirtualizedContainerService.HintSize="337.6,63.2" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="受信トレイ" MarkAsRead="True" Messages="[MailMessage]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" TimeoutMS="{x:Null}" Top="1">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:GetOutlookMailMessages>
-    <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="添付ファイルを保存" ExcludeInlineAttachments="False" Filter="{x:Null}" FolderPath="{x:Null}" sap:VirtualizedContainerService.HintSize="337.6,97.6" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[MailMessage(0)]" OverwriteExisting="False" />
-    <ui:ReadRange AddHeaders="True" DataTable="[out_dt_UserData]" DisplayName="範囲を読み込み (ワークブック)" sap:VirtualizedContainerService.HintSize="337.6,97.6" sap2010:WorkflowViewState.IdRef="ReadRange_1" Password="{x:Null}" SheetName="Sheet1" WorkbookPath="[MailMessage(0).Attachments(0).Name]">
-      <ui:ReadRange.Range>
-        <InArgument x:TypeArguments="x:String">
-          <Literal x:TypeArguments="x:String">
-            <Literal.Result>
-              <OutArgument x:TypeArguments="x:String" />
-            </Literal.Result></Literal>
-        </InArgument>
-      </ui:ReadRange.Range>
-    </ui:ReadRange>
+    <ui:SaveMailAttachments Attachments="{x:Null}" FolderPath="{x:Null}" DisplayName="添付ファイルを保存" ExcludeInlineAttachments="False" sap:VirtualizedContainerService.HintSize="337.6,97.6" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[MailMessage(0)]" OverwriteExisting="False" />
+    <ui:ReadRange AddHeaders="True" DataTable="[out_dt_UserData]" DisplayName="範囲を読み込み (ワークブック)" sap:VirtualizedContainerService.HintSize="337.6,97.6" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="Sheet1" WorkbookPath="[MailMessage(0).Attachments(0).Name]" />
   </Sequence>
 </Activity>
